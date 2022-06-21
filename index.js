@@ -1442,3 +1442,23 @@ const todos = [
         completed: false
     }
 ]
+
+// Prompt a letter
+let letter = String(prompt('Type a letter: '));
+
+// Get all the users who's name contains the letter 
+let getUser = users.filter(user => (user.name).includes(letter));
+console.log(getUser);
+
+// Greet these users.
+getUser.forEach(user => console.log(`Hi ${user.name}`), 2000);
+
+setInterval(() => {
+    console.log(`Hello ${getUser.name}`);
+}, 2000);
+
+// Prompt the user for a user ID, find all the todos that are Incomplete and console.log them using this value.
+let userId = Number(prompt('Enter a user ID: '));
+
+let findTodos = todos.filter(todo => (todo.userId === userId) && (todo.completed === false));
+console.log(findTodos);
